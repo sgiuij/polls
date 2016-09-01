@@ -1,0 +1,25 @@
+<div ng-controller = 'pollsController as PC'>
+  <form>
+    {{PC.polls.question}}
+    {{PC.user.name}}
+   <!--  {{PC.user}} -->
+    <a href="/#/newpoll">Create a New poll</a>
+    <a href="/#/login" ng-click="PC.back()">Logout</a>
+  </form>
+
+  <table>
+    <tr>All Polls</tr>
+    <tr ng-repeat = "poll in PC.polls">
+      <td>{{poll._creater.name}}</td>
+
+      <td> <a href="/#/polls/{{poll._id}}">{{poll.question}}</a> </td>
+      <td>
+        <div ng-if="poll._creater.name==PC.user.name">
+          <button ng-click="PC.deletePoll(poll._id)">delete</button>
+        </div>
+      </td>
+      
+    </tr>
+  </table>
+
+</div>

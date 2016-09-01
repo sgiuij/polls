@@ -1,0 +1,39 @@
+<div ng-controller = "pollsController as PC">
+	{{PC.poll}}
+	<a href="/#/polls">all polls</a>
+	<div >
+	<table>
+		<tr>
+			<th>Option</th>
+			<th>Current Count of Votes</th>
+			<th>Action</th>
+			
+		</tr>
+
+		<tr>
+			
+		    <td>{{PC.poll.option[0]}}</td>
+		    <td>{{PC.poll.vote[0]}}</td>
+		    <td><button ng-click="PC.vote(PC.poll._id,0)">vote</button></td>
+	    </tr>
+	    <tr>
+			
+		    <td>{{PC.poll.option[1]}}</td>
+		    <td>{{PC.poll.vote[1]}}</td>
+		    <td><button ng-click="PC.vote(PC.poll._id,1)">vote</button></td>
+	    </tr>
+	    <tr>
+			
+		    <td>{{PC.poll.option[2]}}</td>
+		    <td>{{PC.poll.vote[2]}}</td>
+		    <td><button ng-click="PC.vote(PC.poll._id,2)">vote</button></td>
+	    </tr>
+	    <tr>
+			
+		    <td>{{PC.poll.option[3]}}</td>
+		    <td>{{PC.poll.vote[3]}}</td>
+		    <td><button ng-click="PC.vote(PC.poll._id,3)">vote</button></td>
+	    </tr>
+	</table>
+	</div>
+</div>

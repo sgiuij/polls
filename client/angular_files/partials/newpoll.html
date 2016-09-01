@@ -1,0 +1,29 @@
+<div ng-controller = "pollsController as PC">
+	<a href="/#/polls">all polls</a>
+
+	<form name = "pollcontent">
+
+		Question <input type="text" ng-model = "PC.pollInfo.question" name = "q" required minlength="8" required>
+		<div name="ops">
+		Option1 <input type="text" ng-model = "PC.pollInfo.op1" required minlength="3" required>
+		Option2 <input type="text" ng-model = "PC.pollInfo.op2" required minlength="3" required>
+		Option3 <input type="text" ng-model = "PC.pollInfo.op3" required minlength="3" required>
+		Option4 <input type="text" ng-model = "PC.pollInfo.op4" required minlength="3" required>
+		</div>
+
+		<button ng-click='PC.newPoll()'>Create Poll</button>
+	</form>
+	<!-- <div ng-messages="pollcontent.q.$error">
+	    <p ng-messages = "required">Question is required.</p>
+	    <p ng-messages ="minlength">Question is at least 8 characters long</p>
+    </div>
+    <div ng-messages="pollcontent.ops.$error">
+	    <p ng-message ="required">Option is required.</p>
+	    <p ng-message ="minlength">Option is at least 3 characters long</p>
+    </div> -->
+
+  	
+
+
+</div>
+
