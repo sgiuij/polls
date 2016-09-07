@@ -24,21 +24,7 @@ module.exports = {
 
     if (!req.body.name) return res.send({ error : 'no_name_in_body'});
     User.findOne({name:req.body.name},function(err,isuser){
-    //   if(err){
-    //     return User.findOne({ name : req.body.name }, function (err, existingUser){
-    //       console.log('22222222222')
-    //       console.log(existingUser)
-    //       req.session['userInfo'] = {
-    //       id : existingUser._id
-    //       }
-    //       return res.json({userInfo: req.session['userInfo']})
-    //     });
-    //   }
-    //   req.session['userInfo'] = {
-    //     id : newUser._id
-    //   }
-    //   return res.json({userInfo: req.session['userInfo']})
-    // })
+
       if(isuser==null){
         var user = new User(req.body)
         user.save(function (err,users) {
@@ -121,15 +107,8 @@ module.exports = {
   },
 
   session: function(req, res){
-    console.log('hit session route')
     if (req.session['userInfo']) return res.json({userInfo: req.session['userInfo']})
     res.json({userInfo: null })
   }
-  // session : function(req, res) {
-  //     if (!req.session.userId) return res.send({ error : 'not_logged_in'});
 
-  //     return res.send({ userId : req.session.userId, name : req.session.name });
-  //   },
 }
-// //   
-// }

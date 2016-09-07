@@ -9,11 +9,6 @@ var mongoose = require ('mongoose'),
 
 mongoose.connect(dbURI);
 
-// fs.readdirSync(models_path).forEach(function(file){
-// 	if(file.indexOf('.js')>0){
-// 		require(models_path+'/'+file); 
-// 	}
-// });
 
 mongoose.connection.on( 'connected', function () {
   console.log( `Mongoose default connection open to ${ dbURI }` );
